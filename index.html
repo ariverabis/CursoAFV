@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AVF - Gestión de Ventas</title>
+    <title>AVF - Identificación</title>
     <style>
         body {
             font-family: sans-serif;
@@ -25,7 +25,7 @@
             margin-top: 20px;
         }
         .header {
-            background-color: #2e8b57;
+            background-color: #007bff;
             color: white;
             padding: 15px;
             display: flex;
@@ -41,73 +41,68 @@
             height: 25px;
             margin-right: 10px;
         }
-        .info-box {
-            background-color: #d3d3d3;
-            padding: 15px;
-            margin-bottom: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .info-box p {
-            margin: 0;
-            font-weight: bold;
-        }
-        .info-box .back-arrow {
-            font-size: 2em;
+        .header .options {
+            background-color: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5em;
             cursor: pointer;
-            color: #555;
+            padding: 5px;
         }
-        .menu-options {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+        .info-form {
             padding: 20px;
         }
-        .menu-options button {
-            width: 100%;
-            padding: 15px;
-            font-size: 1.1em;
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+            gap: 5px;
+        }
+        .form-group label {
+            font-weight: bold;
+            font-size: 0.9em;
+        }
+        .form-group .input-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .form-group input, .form-group select {
+            flex-grow: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .form-group .close-button {
+            background-color: #ccc;
+            border: none;
+            font-size: 1.2em;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+        }
+        .bottom-nav button {
+            padding: 15px 30px;
+            font-size: 1em;
             border: none;
             border-radius: 5px;
             background-color: #d3d3d3;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .menu-options button:hover {
-            background-color: #c0c0c0;
-        }
-        .menu-options button:active {
-            background-color: #a9a9a9;
-        }
-        .financial-info {
-            padding: 20px;
-            border-top: 1px solid #ddd;
-        }
-        .financial-info table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-        .financial-info td {
-            padding: 8px 0;
-            font-size: 1em;
-        }
-        .financial-info td:first-child {
-            font-weight: bold;
-        }
-        .financial-info td:last-child {
-            text-align: right;
         }
         .copyright {
-            text-align: center;
-            font-size: 0.75em;
+            font-size: 0.7em;
             color: #888;
-            padding: 10px;
-            border-top: 1px solid #ddd;
-        }
-        .button-tooltip {
-            position: relative;
-            display: inline-block;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
         }
     </style>
 </head>
@@ -116,55 +111,67 @@
 <div class="container">
     <div class="header">
         <div class="title">
-            <img src="https://via.placeholder.com/25" alt="">
-            <span>028 - Gestión de Ventas</span>
+            <img src="https://via.placeholder.com/25" alt="Logo">
+            <span>005 - Identificación</span>
         </div>
-        <div class="options">...</div>
+        <button type="button" class="options">...</button>
+    </div>
+    
+    <div class="info-form">
+        <div class="form-group">
+            <label for="vendedor">Nombre del Vendedor:</label>
+            <div class="input-wrapper">
+                <input type="text" id="vendedor" value="ALVARO RIVERA" readonly>
+                <button type="button" class="close-button">X</button>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="zona">Zona de Venta:</label>
+            <div class="input-wrapper">
+                <select id="zona">
+                    <option value="Z072 - ZONA 72" selected>Z072 - ZONA 72</option>
+                    <option value="Z137 - ZONA 137">Z137 - ZONA 137</option>
+                    <option value="Z159 - ZONA 159">Z159 - ZONA 159</option>
+                    <option value="Z178 - ZONA 178">Z178 - ZONA 178</option>
+                    <option value="Z260 - ZONA 260">Z260 - ZONA 260</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="ruta">Ruta de Visita:</label>
+            <div class="input-wrapper">
+                <select id="ruta">
+                    <option value="22 - ARAGUA 2 - ARAGUA 2" selected>22 - ARAGUA 2 - ARAGUA 2</option>
+                    <option value="29 - CARABOBO 1 - CARABOBO 1">29 - CARABOBO 1 - CARABOBO 1</option>
+                    <option value="41 - CLIENTE RETIRA - CLIENTE RETIRA">41 - CLIENTE RETIRA - CLIENTE RETIRA</option>
+                    <option value="1 - Lunes - Lunes">1 - Lunes - Lunes</option>
+                    <option value="33 - CARABOBO 5 - CARABOBO 5">33 - CARABOBO 5 - CARABOBO 5</option>
+                    <option value="30 - CARABOBO 2 - CARABOBO 2">30 - CARABOBO 2 - CARABOBO 2</option>
+                    <option value="32 - CARABOBO 4 - CARABOBO 4">32 - CARABOBO 4 - CARABOBO 4</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <div class="input-wrapper">
+                <input type="text" id="fecha" value="12-08-2025" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="hora">hora</label>
+            <div class="input-wrapper">
+                <input type="text" id="hora" value="10:13:51 AM" readonly>
+            </div>
+        </div>
     </div>
 
-    <div class="info-box">
-        <p>A-40, C.A - 2565065</p>
-        <span class="back-arrow">&#8617;</span>
+    <div class="bottom-nav">
+        <button type="button" onclick="history.back()">Salir</button>
+        <a href="menugestionventas.html"><button type="button">Siguiente</button></a>
     </div>
 
-    <div class="info-box">
-        <p>Código Cliente: 2565065</p>
-    </div>
-
-    <div class="menu-options">
-        <a href="DetallePedido.html" style="text-decoration: none;"><button type="button" title="Presione para crear un nuevo pedido para el cliente actual.">Nuevo Pedido</button></a>
-        <button type="button" title="Presione para ver la lista de todos los pedidos realizados por el cliente.">Consultar Pedidos</button>
-        <button type="button" title="Presione para crear una nueva cotización de productos.">Nueva Cotización</button>
-        <button type="button" title="Presione para ver el historial de cotizaciones para el cliente actual.">Consultar Cotizaciones</button>
-    </div>
-
-    <div class="financial-info">
-        <table>
-            <tr>
-                <td>Límite de Crédito:</td>
-                <td>34.800,00</td>
-            </tr>
-            <tr>
-                <td>Crédito Disponible:</td>
-                <td>10.125,20</td>
-            </tr>
-            <tr>
-                <td>A la Fecha:</td>
-                <td>29-07-2025</td>
-            </tr>
-            <tr>
-                <td>Grupo cliente</td>
-                <td>MAYOREOD</td>
-            </tr>
-        </table>
-    </div>
-
-    <div class="copyright">
-        © Copyright Wholesale World Information Systems LTD, 2014
-    </div>
+    <p class="copyright">© Copyright Wholesale World Information Systems LTD, 2014</p>
 </div>
 
 </body>
-
 </html>
-
