@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVF - Clientes</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+        }
+        .header .title {
+            display: flex;
+            align-items: center;
+        }
+        .header .title img {
+            height: 25px;
+            margin-right: 10px;
+        }
+        .header .back-arrow {
+            font-size: 2em;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
+        .search-area {
+            padding: 15px;
+        }
+        .search-area .form-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .search-area label {
+            font-weight: bold;
+        }
+        .search-area select, .search-area input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .client-input-group {
+            display: flex;
+            gap: 5px;
+        }
+        .client-input-group button {
+            padding: 10px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #d3d3d3;
+            cursor: pointer;
+        }
+        .client-list {
+            border-top: 1px solid #eee;
+            min-height: 200px;
+            overflow-y: auto;
+        }
+        .client-item {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .client-item.selected {
+            background-color: #e6f2ff;
+            font-weight: bold;
+        }
+        .keyboard {
+            display: grid;
+            grid-template-columns: repeat(13, 1fr);
+            gap: 5px;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+        }
+        .keyboard button {
+            padding: 15px;
+            font-size: 0.8em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+        }
+        .keyboard button:nth-child(14) {
+            grid-column: span 13;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="title">
+            <img src="https://via.placeholder.com/25" alt="Logo">
+            <span>088 - Clientes</span>
+        </div>
+        <a href="menugestionventas.html" class="back-arrow" title="Regresar">&#8617;</a>
+    </div>
+
+    <div class="search-area">
+        <div class="form-group">
+            <label for="ruta-cliente">Ruta:</label>
+            <select id="ruta-cliente">
+                <option value="todas">--- Todas ---</option>
+                <option value="ruta1">Ruta 1</option>
+                <option value="ruta2">Ruta 2</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="cliente">Cliente:</label>
+            <div class="client-input-group">
+                <input type="text" id="cliente" value="2565065" readonly>
+                <button type="button">O.P.</button>
+                <button type="button">B.</button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="client-list">
+        <div class="client-item selected">A-40, C.A - 2565065</div>
+        <div class="client-item">ALTAMIRA FERRE-INDUSTRIAL - 2131133</div>
+        <div class="client-item">BIKE MARKET REPUESTOS & ACCESORIOS, C.A - 2531304</div>
+        <div class="client-item">COLORMAR C.A. - 2541013</div>
+        <div class="client-item">COMERCIAL EL SAMAN 2007, C.A. - 2532008</div>
+        <div class="client-item">COMERCIALIZADORA Y SUPLIDORA POVINSTAR ASIA, C A - 25...</div>
+        <div class="client-item">CONCRETERA Y FERRETERIA DON JULIO SANCHEZ C.A. - 2565...</div>
+    </div>
+
+    <div class="keyboard">
+        <button>A</button><button>B</button><button>C</button><button>D</button><button>E</button><button>F</button><button>G</button><button>H</button><button>I</button><button>J</button><button>K</button><button>L</button><button>M</button>
+        <button>N</button><button>Ñ</button><button>O</button><button>P</button><button>Q</button><button>R</button><button>S</button><button>T</button><button>U</button><button>V</button><button>W</button><button>X</button><button>Y</button><button>Z</button>
+    </div>
+
+</div>
+
+</body>
+</html>

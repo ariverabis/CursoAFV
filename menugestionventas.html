@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AVF - Menú Ventas</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+        }
+        .container {
+            width: 100%;
+            max-width: 400px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .header {
+            background-color: #007bff;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.2em;
+        }
+        .header .title {
+            display: flex;
+            align-items: center;
+        }
+        .header .title img {
+            height: 25px;
+            margin-right: 10px;
+        }
+        .header .back-arrow {
+            font-size: 2em;
+            cursor: pointer;
+            color: white;
+            text-decoration: none;
+        }
+        .menu {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .menu-button {
+            padding: 15px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            background-color: #d3d3d3;
+            cursor: pointer;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+        .menu-button:hover {
+            background-color: #c0c0c0;
+        }
+        .menu-button.disabled {
+            background-color: #e0e0e0;
+            color: #a0a0a0;
+            cursor: not-allowed;
+        }
+        .copyright {
+            font-size: 0.7em;
+            color: #888;
+            text-align: center;
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="title">
+            <img src="https://via.placeholder.com/25" alt="Logo">
+            <span>073 - Menú Ventas</span>
+        </div>
+        <a href="identificacion.html" class="back-arrow" title="Regresar">&#8617;</a>
+    </div>
+
+    <div class="menu">
+        <button class="menu-button">Pedidos del catálogo</button>
+        <button class="menu-button">Clientes</button>
+        <button class="menu-button">Consultas</button>
+        <a href="clientes.html" style="text-decoration: none;">
+            <button class="menu-button">Gestión de Ventas</button>
+        </a>
+        <button class="menu-button disabled">Transmitir Transacciones</button>
+        <button class="menu-button">Salir</button>
+    </div>
+
+    <p class="copyright">© Copyright Wholesale World Information Systems LTD, 2014</p>
+</div>
+
+</body>
+</html>
